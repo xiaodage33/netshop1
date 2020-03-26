@@ -98,6 +98,8 @@ class LoginView(View):
                 SessionCartManager(request.session).migrateSession2DB()
 
                 return HttpResponseRedirect('/cart/queryAll/')
+            elif red == 'order':   #判断是否登录
+                return HttpResponseRedirect('/order/order.html?cartitems='+request.POST.get('cartitems'))
 
 
 

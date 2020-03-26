@@ -207,9 +207,11 @@
         //单击结算按钮
         $('#jiesuan').click(function(){
 
-
+    //获取所有的类选择器
             cks = $('.son_check')
+            //定义一个数组
             var cartitem = []
+            //复选框遍历整个数组
             $.each(cks,function(index,ck){
                 if($(ck).prop('checked')){
                     var goodsid = $(ck).parents('.order_lists').attr('goodsid')
@@ -228,8 +230,6 @@
             if(cartitem.length==0){
                 return;
             }
-
-
 
             var url = '/order/?cartitems='+cartitem;
             $(this).attr('href',url);

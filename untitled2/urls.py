@@ -21,8 +21,10 @@ from untitled2.settings import  MEDIA_ROOT,DEBUG
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user/', include('userapp.urls')),
+    url(r'^cart/', include('cart.urls')),
 
     url(r'^', include('goods.urls')),
+    # url(r'^order/', include('order.urls')),
 
 ]
 
